@@ -10,10 +10,7 @@ library(stringr)
 library(dplyr)
 library(purrr)
 library(readr)
-library(ggplot2)
 library(lubridate)
-library(ggraph)
-library(ggforce)
 
 
 # load --------------------------------------------------------------------
@@ -32,8 +29,7 @@ mixtapes$scrape_time <- dmy(mixtapes$scrape_time)
 # get artist d/l counts
 artist_downloads <- mixtapes %>% 
   count(artist, wt = downloads) %>% 
-  arrange(desc(n)) %>% 
   filter(artist != "Various Artists") %>% 
-  rename(name=artist, value=)
+  rename(name=artist, value=n)
 
 write_csv(artist_downloads, path = "./data/artist-dl-counts.csv")

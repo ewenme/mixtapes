@@ -9,19 +9,16 @@ if(length(new.packages)) install.packages(new.packages)
 rm(list.of.packages, new.packages)
 
 
-# global parameters -------------------------------------------------------
-
-# base url
-base_url <- "https://www.datpiff.com/mixtapes/"
-
-
 # functions ---------------------------------------------------------------
 
 # scrape a mixtape awarded category from datpiff
-scrape_mixtapes <- function(mixtape_category, page) {
+scrape_datpiff_page <- function(mixtape_category, page_no) {
+  
+  # base url
+  base_url <- "https://www.datpiff.com/mixtapes/"
   
   # read page
-  page <- read_html(paste0(base_url, mixtape_category, "/", page)) %>% 
+  page <- read_html(paste0(base_url, mixtape_category, "/", page_no)) %>% 
     html_nodes("div.contentListing.celebrated")
   
   # get titles
@@ -43,11 +40,18 @@ scrape_mixtapes <- function(mixtape_category, page) {
     str_remove_all(",") %>% 
     as.numeric()
   
+  # get link
+  links <- page %>% 
+    html_nodes(css = "[class=contentThumb]") %>% 
+    html_nodes(css = "a") %>% 
+    html_attr('href')
+  
   # create data frame
   return(tibble::tibble(
     artist = artists,
     title = titles,
-    downloads = downloads
+    downloads = downloads,
+    link = links
   ))
   
 }

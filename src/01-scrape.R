@@ -15,13 +15,13 @@ library(readr)
 # scrape ------------------------------------------------------------------
 
 # get gold mixtapes
-gold_mixtapes <- map_dfr(1:20, scrape_mixtapes, mixtape_category = "gold")
+gold_mixtapes <- map_dfr(1:20, scrape_datpiff_page, mixtape_category = "gold")
 
 # get platinum mixtapes
-platinum_mixtapes <- map_dfr(1:20, scrape_mixtapes, mixtape_category = "platinum") 
+platinum_mixtapes <- map_dfr(1:20, scrape_datpiff_page, mixtape_category = "platinum") 
   
 # get double platinum mixtapes
-dbl_platinum_mixtapes <- map_dfr(1:20, scrape_mixtapes, mixtape_category = "2xplatinum") 
+dbl_platinum_mixtapes <- map_dfr(1:20, scrape_datpiff_page, mixtape_category = "2xplatinum") 
 
 
 # clean -------------------------------------------------------------------

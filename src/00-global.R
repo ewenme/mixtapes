@@ -44,8 +44,8 @@ scrape_datpiff_page <- function(mixtape_category, page_no) {
   links <- page %>% 
     html_nodes(css = "[class=contentThumb]") %>% 
     html_nodes(css = "a") %>% 
-    html_attr('href')
-  
+    html_attr('href') 
+
   # create data frame
   return(tibble::tibble(
     artist = artists,

@@ -14,6 +14,7 @@ Codebook:
 -   `artist` (name of artist)
 -   `title` (title of project)
 -   `downloads` (download count, at time of scrape)
+-   `link` (mixtape sub-page URL)
 
 Code
 ----

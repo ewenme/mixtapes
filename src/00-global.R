@@ -51,7 +51,8 @@ scrape_datpiff_page <- function(mixtape_category, page_no) {
     artist = artists,
     title = titles,
     downloads = downloads,
-    link = links
+    link = links,
+    scrape_time = format(Sys.Date(), "%d-%m-%y")
   ))
   
 }

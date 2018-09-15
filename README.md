@@ -7,7 +7,7 @@ Data
 
 Mixtapes scraped from the [celebrated](http://www.datpiff.com/mixtapes/celebrated) section of the DatPiff site, specifically mixtapes in the **gold/platinum/2xplatinum** categories.
 
-.csv format, found in `/data`. Date in filename = date of scrape.
+.csv format, found in `/data`.
 
 Codebook:
 
@@ -15,6 +15,7 @@ Codebook:
 -   `title` (title of project)
 -   `downloads` (download count, at time of scrape)
 -   `link` (mixtape sub-page URL)
+-   `scrape_time` (date at time of scrape)
 
 Code
 ----

@@ -15,7 +15,7 @@ library(lubridate)
 
 # load --------------------------------------------------------------------
 
-mixtapes <- read_csv("./data/datpiff-mixtapes.csv")
+mixtapes <- read_csv("./raw-data/datpiff-mixtapes.csv")
 
 
 # clean -------------------------------------------------------------------

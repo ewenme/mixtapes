@@ -39,4 +39,4 @@ mixtapes <- arrange(mixtapes, desc(downloads))
 # export ------------------------------------------------------------------
 
 # write data 
-write_csv(mixtapes, path = "./data/datpiff-mixtapes.csv")
+write_csv(mixtapes, path = "./raw-data/datpiff-mixtapes.csv")
